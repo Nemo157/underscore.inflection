@@ -184,4 +184,5 @@
    */
   _.mixin( inflector.resetInflections( ) );
 
+  return inflector;
 });
