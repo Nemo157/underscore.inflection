@@ -4,7 +4,17 @@
 //  Portions of Underscore.inflection are inspired or borrowed from ActiveSupport
 //  Version 1.0.0
 
-( function( _, undefined )
+
+(function (factory) {
+    // Support module loading scenarios
+    if (typeof define === 'function' && define.amd) {
+        // AMD Anonymous Module
+        define(['underscore'], factory);
+    } else {
+        // No module loader (plain <script> tag) - put directly in global namespace
+        factory(_);
+    }
+})(function( _ )
 {
   var
     plurals = [ ],
@@ -174,4 +184,4 @@
    */
   _.mixin( inflector.resetInflections( ) );
 
-} )( _ );
+});
